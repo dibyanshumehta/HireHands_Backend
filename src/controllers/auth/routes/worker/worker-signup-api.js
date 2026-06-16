@@ -23,7 +23,7 @@ const WorkerSignup = async (req, res) => {
         }
 
         const workerData = new WorkerModel({
-            _id = userId,
+            _id = workerId,
             name,
             username,
             email,
