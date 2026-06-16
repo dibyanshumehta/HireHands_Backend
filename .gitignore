@@ -1,4 +1,17 @@
-# Logs
+# Dependencies (Never commit node_modules)
+node_modules/
+jspm_packages/
+web_modules/
+
+# Environment Variables and Secrets (Critical for security)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# Logs and Debugging
 logs
 *.log
 npm-debug.log*
@@ -7,19 +20,35 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Diagnostic reports 
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented code coverage downloads
+coverage/
+.nyc_output/
+
+# Build and Compilation outputs (if using TypeScript or bundlers)
+dist/
+build/
+out/
+.next/
+.nuxt/
+
+# IDEs and Text Editors
+.vscode/
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-*.env
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
