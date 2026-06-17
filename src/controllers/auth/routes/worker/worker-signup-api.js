@@ -1,6 +1,6 @@
-import { WorkerModel } from "../../../../modals/auth/signup.js";
 import bcrypt from "bcrypt";
 import { v4 as uuid } from "uuid";
+import { WorkerModel } from "../../../../modals/auth/signup.js";
 
 const WorkerSignup = async (req, res) => {
     try{
@@ -23,7 +23,7 @@ const WorkerSignup = async (req, res) => {
         }
 
         const workerData = new WorkerModel({
-            _id = workerId,
+            _id : workerId,
             name,
             username,
             email,

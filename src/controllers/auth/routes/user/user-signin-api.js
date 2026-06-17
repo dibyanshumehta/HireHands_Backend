@@ -1,6 +1,6 @@
-import { UserModel } from "../../../../modals/auth/signup.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { UserModel } from "../../../../modals/auth/signup.js";
 
 const userSignin = async (req, res) => {
     try{

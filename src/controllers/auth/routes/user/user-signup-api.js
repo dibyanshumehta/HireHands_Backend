@@ -1,6 +1,6 @@
-import { UserModel } from "../../../../modals/auth/signup.js";
 import bcrypt from "bcrypt";
 import { v4 as uuid } from "uuid";
+import { UserModel } from "../../../../modals/auth/signup.js";
 
 const UserSignup = async (req, res) => {
     try {

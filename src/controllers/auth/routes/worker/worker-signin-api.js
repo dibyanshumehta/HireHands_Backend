@@ -1,6 +1,6 @@
-import { WorkerModel } from "../../../../modals/auth/signup";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { WorkerModel } from "../../../../modals/auth/signup.js";
 
 const WorkerSignin = async (req, res) => {
     try{
