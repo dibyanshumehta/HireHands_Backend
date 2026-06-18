@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 const port = 9000;
 
-dbConnection
+dbConnection();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

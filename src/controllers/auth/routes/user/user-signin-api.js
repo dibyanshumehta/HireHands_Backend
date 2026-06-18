@@ -24,7 +24,7 @@ const userSignin = async (req, res) => {
         return res.status(200).json({ message : "Details fetched successfully", token, status: 201 });
     } catch (error) {
         console.log(error);
-        return res.json({ message : "Something went wrong", error });
+        return res.status(500).json({ message : "Something went wrong", error });
     }
 };
 
