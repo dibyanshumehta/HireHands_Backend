@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import { v4 as uuid } from "uuid";
-import { UserModel } from "../../../../modals/auth/signup.js";
+import { UserModel } from "../../../modals/auth/signup.js";
 
 const UserSignup = async (req, res) => {
     try {
@@ -9,7 +9,7 @@ const UserSignup = async (req, res) => {
         const userId  = uuid();
 
         if(!name || !username || !email || !phone || !password) {
-            return res .status(400).json({message : "All fields are required for sign up"});
+            return res.status(400).json({message : "All fields are required for sign up"});
         }
         
         const existingUser = await UserModel.findOne({ username });
@@ -35,7 +35,7 @@ const UserSignup = async (req, res) => {
 
     } catch (error){
         console.log(error);
-        return res.json({ message: "An error occurred during user registration", status: 500});
+        return res.json({ message: "An error occurred during user registration", error});
     }
 }; 
 

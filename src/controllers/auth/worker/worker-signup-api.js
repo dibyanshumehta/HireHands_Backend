@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import { v4 as uuid } from "uuid";
-import { WorkerModel } from "../../../../modals/auth/signup.js";
+import { WorkerModel } from "../../../modals/auth/signup.js";
 
 const WorkerSignup = async (req, res) => {
     try{
@@ -37,7 +37,7 @@ const WorkerSignup = async (req, res) => {
         return res.json({message : "Worker registered successfully", status: 201});
         } catch (error){
             console.log(error);
-            return res.json({message : "An error occurred during worker registration", status: 500});
+            return res.json({message : "An error occurred during worker registration", error});
     }
 }; 
 

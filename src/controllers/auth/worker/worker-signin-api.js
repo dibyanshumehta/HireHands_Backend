@@ -1,31 +1,31 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { UserModel } from "../../../../modals/auth/signup.js";
+import { WorkerModel } from "../../../modals/auth/signup.js";
 
-const userSignin = async (req, res) => {
+const WorkerSignin = async (req, res) => {
     try{
         const { username, password } = req.body;
-        const newUser = await UserModel.findOne({ username });
+        const newWorker = await WorkerModel.findOne({ username });
 
-        if (!newUser) {
+        if (!newWorker) {
             return res.status(404).json({ message : "User not found" });
         }
 
-        const isPasswordValid = await bcrypt.compare(password, newUser.password);
+        const isPasswordValid = await bcrypt.compare(password, newWorker.password);
         if (!isPasswordValid) {
             return res.status(401).json({ message : "Invalid Password" });
         }
 
         const token = jwt.sign(
-            { id : newUser._id, username : newUser.username },
+            { id : newWorker._id, username : newWorker.username },
             process.env.JWT_SECRET,
         );
 
         return res.status(200).json({ message : "Details fetched successfully", token, status: 201 });
     } catch (error) {
         console.log(error);
-        return res.status(500).json({ message : "Something went wrong", error });
+        return res.json({ message : "Something went wrong", error });
     }
 };
 
-export default userSignin;
+export default WorkerSignin;
