@@ -7,7 +7,7 @@ import userSignin from "../user/user-signin-api.js";
 const authRoutes = Router();
 
 authRoutes.post("/workersignup", WorkerSignup);
-authRoutes.post("workersignin", WorkerSignin);
+authRoutes.post("/workersignin", WorkerSignin);
 
 authRoutes.post("/usersignup", UserSignup);
 authRoutes.post("/usersignin", userSignin);

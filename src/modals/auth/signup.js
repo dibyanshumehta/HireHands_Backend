@@ -4,7 +4,6 @@ const userSchema = new Schema({
     _id : String,
     name : String,
     username : String,
-    email : String,
     phone : String,
     password : String,
 });
@@ -13,7 +12,6 @@ const workerSchema = new Schema({
     _id : String,
     name : String,
     username : String,
-    email : String,
     phone : String,
     password : String,
     skill : String,
